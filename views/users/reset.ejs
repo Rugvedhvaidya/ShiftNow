@@ -1,0 +1,27 @@
+<!-- This ejs template is used to display a from to set their new password-->
+
+<% layout('layouts/boilerplate') %>
+
+    <div class="row">
+        <div class="col-md-6">
+            <form action="/reset/<%= token %>" method="POST" onsubmit="return validator()">
+                <h2>Reset Password</h2>
+                <div class="form-group mb-3">
+                    <label for="password" class="form-label">New Password</label>
+                    <input type="password" name="password" id="password" value="" placeholder="New password"
+                        class="form-control" autofocus>
+                    <span id="message" style="color: red;"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="confirm" class="form-label">Confirm Password</label>
+                    <input type="password" name="confirm" id="confirm" value="" placeholder="Confirm password"
+                        class="form-control">
+                </div>
+                <div class="form-group mb-3">
+                    <button type="submit" class="btn btn-primary">Update password</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="/js/passwordValidator.js"></script>

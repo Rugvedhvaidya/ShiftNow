@@ -1,0 +1,49 @@
+<!-- This ejs template is used to display the owner details of the property-->
+
+<% layout('layouts/boilerplate') %>
+
+    <div class="row justify-content-around">
+        <div class="col-md-3 mt-5">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-muted"><b>
+                            <%= user.username %>
+                        </b></h5>
+                    <p class="card-text"><b>Email : <%= user.email %></b></p>
+                    <p class="card-text"><b>Contact number : <%= user.phone %></b></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <h3>
+                <%= user.username %> All Properties
+            </h3>
+            <% for(let house of houses) {%>
+                <div class="card mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="<%= house.images[0].url %>" class="img-thumbnail rounded" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <%= house.location %> (<%= house.roomType %> )
+                                </h5>
+                                <h6>
+                                    Rent : <%= house.price %>/month
+                                </h6>
+                                <p class="card-text">
+                                    <%= house.description %>
+                                </p>
+                                <div class="card-text">
+                                    <button class="get-details-button btn btn-sm btn-primary"
+                                        onclick="location.href='/houses/<%= house._id %>'">Get Details</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+        </div>
+    </div>

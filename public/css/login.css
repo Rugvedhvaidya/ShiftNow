@@ -1,0 +1,44 @@
+/* CSS file for Login page */
+
+body {
+    background-image: linear-gradient(rgba(15, 14, 14, 0.5), rgba(31, 25, 25, 0.5)), URL("https://media.architecturaldigest.com/photos/571e97c5741fcddb16b559c9/2:1/w_5127,h_2563,c_limit/modernist-decor-inspiration-01.jpg");
+    background-size: cover;
+    height: 100vh;
+}
+
+#card{
+    margin:auto;
+    background-color: cornflowerblue;
+    height:80vh;
+    width:80vw;
+    border-radius: 10px;
+}
+#my-carousel{
+    width:50vw;
+    height:80vh;
+}
+.carousel-image{
+    width:50vw;
+    height:80vh;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+#login-page{
+    height:80vh;
+    width:30vw;
+    background-color:white;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding:10px;
+}
+.input-box{
+    width:20vw;
+    height:50px;
+    margin-bottom:20px;
+    border-radius: 10px;
+}
+.login-heading{
+    font-family:fantasy;
+    text-align: center;   
+    margin-bottom: 8vh;;
+}

@@ -1,0 +1,116 @@
+/* CSS file for filters */
+
+#filters-guide{
+    width:25vw;
+    margin-top:50px;
+    font-family:serif;
+    background-color:rgba(72, 82, 80, 0.363) ;
+    padding:10px;
+    /* position:fixed; */
+    border-radius: 5px;
+}
+
+.filters-type{
+    width:50%;
+    color:white;
+
+}
+
+.filter-type{
+    margin-top:5px;
+    background-color:white;
+    border-radius: 5px;
+    padding:17px;
+}
+
+.filter-type:nth-child(1){
+    margin-top: 0;
+}   
+
+.filter{
+    width:8vw;
+    display:inline-block;
+}
+
+.get-details-button{
+    margin-left:5px;
+    height:5vh;
+    width:100px;
+    border-radius: 10px;
+}
+
+
+
+.filter-button{
+    background-color: rgb(42, 44, 43);
+    margin:2px 0px;
+    width:80px;
+    border-radius: 7px;
+    color:white;
+
+}
+
+.filter-button:hover{
+    background-color: blue;
+    color:white;
+    border-radius: 5px;
+    width:100px;
+}
+
+.filter-input{
+    display: none;
+}
+.availability:hover{
+    font-size:20px;
+}
+.parking:hover{
+    font-size:17px;
+}
+.checked{
+    color:orange;
+}
+.sort-button{
+    height:30px;
+    margin:0 20px;
+    width:10vw;
+}
+
+.dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+#price-sort{
+    position: relative;
+    display: inline-block;
+      
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.sort:hover .dropdown-content {display: block;}
+
+.sort-button:hover  {background-color: #3d4064;
+color:white;}
+
+#toggle-switch{
+    margin-left:1vw;
+}
+
+.range-bar{
+    width:20vw;
+}
+#volume{
+    text-align: right;
+}

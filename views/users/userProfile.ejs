@@ -1,0 +1,123 @@
+<!-- This ejs template is used to display the details of the user-->
+
+<% layout('layouts/boilerplate') %>
+
+    <div class="row">
+        <div class="col-4">
+            <div class="list-group" id="list-tab" role="tablist">
+                <a class="list-group-item list-group-item-action active" id="list-profile-list" data-bs-toggle="list"
+                    href="#list-profile" role="tab" aria-controls="list-profile">Profile</a>
+                <a class="list-group-item list-group-item-action" id="list-wishlist-list" data-bs-toggle="list"
+                    href="#list-wishlist" role="tab" aria-controls="list-wishlist">Wishlist</a>
+                <a class="list-group-item list-group-item-action" id="list-properties-list" data-bs-toggle="list"
+                    href="#list-properties" role="tab" aria-controls="list-proeprties">My Properties</a>
+                <a class="list-group-item list-group-item-action" id="list-logout-list" data-bs-toggle="list"
+                    href="#list-logout" role="tab" aria-controls="list-logout"
+                    onclick="location.href='/logout'">Logout</a>
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="list-profile" role="tabpanel"
+                    aria-labelledby="list-profile-list">
+                    <div>
+                        <div class="col-md-8">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title text-muted"><b>
+                                            Hi! <%= user.username %>
+                                        </b></h5>
+                                    <p class="card-text"><b>Email : <%= user.email %></b></p>
+                                    <p class="card-text"><b>Contact number : <%= user.phone %></b></p>
+                                </div>
+                                <a href="/profile/edit" class="mb-3 ms-3 btn btn-danger" style="width: 4em;">Edit</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="list-wishlist" role="tabpanel" aria-labelledby="list-wishlist-list">
+                    <div class="row">
+                        <% if(i==1) { %>
+                            <h2 class="m-5">No wishlisted houses</h2>
+                            <% }else {%>
+
+                                <% for(let house of wishlistHouses) {%>
+
+                                    <div class="col-md-10">
+                                        <div class="card mb-3">
+                                            <div class="row g-0">
+                                                <div class="col-md-4">
+                                                    <img src="<%= house.images[0].url %>" class="img-thumbnail rounded"
+                                                        alt="...">
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">
+                                                            <%= house.location %> (
+                                                                <%= house.roomType %> )
+                                                        </h5>
+                                                        <h6>
+                                                            Rent :
+                                                            <%= house.price %>/month
+                                                        </h6>
+                                                        <p class="card-text">
+                                                            <%= house.description %>
+                                                        </p>
+                                                        <div class="card-text">
+                                                            <button class="get-details-button btn btn-sm btn-primary"
+                                                                onclick="location.href='/houses/<%= house._id %>'">Get
+                                                                Details</button>
+                                                            <form
+                                                                action="/profile/wishlist/<%= house._id %>?_method=DELETE"
+                                                                method="POST" class="d-inline">
+                                                                <button class="btn btn-sm btn-danger">Delete</button>
+                                                            </form>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <% } %>
+
+                                        <% } %>
+
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="list-properties" role="tabpanel" aria-labelledby="list-properties-list">
+                    <% for(let house of houses) {%>
+                        <div class="card mb-3">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="<%= house.images[0].url %>" class="img-thumbnail rounded" alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            <%= house.location %> (
+                                                <%= house.roomType %> )
+                                        </h5>
+                                        <h6>
+                                            Rent :
+                                            <%= house.price %>/month
+                                        </h6>
+                                        <p class="card-text">
+                                            <%= house.description %>
+                                        </p>
+                                        <div class="card-text">
+                                            <button class="get-details-button btn btn-sm btn-primary"
+                                                onclick="location.href='/houses/<%= house._id %>'">Get Details</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <% } %>
+                </div>
+            </div>
+        </div>
+    </div>

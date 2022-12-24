@@ -1,0 +1,42 @@
+<!-- This ejs template is used to display wishlisted houses by the user-->
+
+<% layout('layouts/boilerplate') %>
+
+    <div class="row">
+        <% for(let house of houses) {%>
+
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="<%= house.images[0].url %>" class="img-thumbnail rounded" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <%= house.location %> (<%= house.roomType %> )
+                                </h5>
+                                <h6>
+                                    Rent : <%= house.price %>/month
+                                </h6>
+                                <p class="card-text">
+                                    <%= house.description %>
+                                </p>
+                                <div class="card-text">
+                                    <button class="get-details-button btn btn-sm btn-primary"
+                                        onclick="location.href='/houses/<%= house._id %>'">Get Details</button>
+                                    <form action="/profile/wishlist/<%= house._id %>?_method=DELETE" method="POST"
+                                        class="d-inline">
+                                        <button class="btn btn-sm btn-danger">Delete</button>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <% } %>
+    </div>

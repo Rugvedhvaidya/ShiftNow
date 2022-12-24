@@ -1,0 +1,8 @@
+/* CSS file for Sign up page */
+
+body {
+    background-image: linear-gradient(rgba(15, 14, 14, 0.5), rgba(31, 25, 25, 0.5)), URL("https://media.architecturaldigest.com/photos/571e97c5741fcddb16b559c9/2:1/w_5127,h_2563,c_limit/modernist-decor-inspiration-01.jpg");
+
+    background-size: cover;
+    height: 100vh;
+}

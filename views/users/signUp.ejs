@@ -1,0 +1,62 @@
+<!-- This ejs template is used to display Signup page-->
+
+<% layout('layouts/boilerplate') %>
+
+    <link rel="stylesheet" href="/css/signUp.css">
+
+    <div class=" row container justify-content-around mb-3">
+        <div class="p-5 col-md-6 fw-bolder  rounded-3" style="background-color: #f2f2f2 ;">
+
+            <div class="signup mb-3">
+                <h1 style="font-family: fantasy;" class=" fw-light">Signup</h1>
+                <p>Existing user? <a href="/login">Sign in</a></p>
+            </div>
+
+            <div class="form-class">
+                <form action="/signUp" onsubmit="return validator()" method="POST">
+
+                    <div class="col-10 mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" name="username" id="username" class="form-control" required>
+                        <div class="invalid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+
+                    <div class="col-10 mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" name="email" id="email" class="form-control" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+
+                    <div class="col-10 mb-3">
+                        <label for="phone" class="form-label">Contact Number</label>
+                        <input type="tel" name="phone" id="phone" class="form-control" required pattern="[0-9]{10}">
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+
+                    <div class="col-10 mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" id="password" name="password" class="form-control" required>
+                        <span id="message" style="color: red;"></span>
+                    </div>
+
+                    <div class="col-10 mb-3">
+                        <label for="confirm" class="form-label">Confirm Password</label>
+                        <input type="password" id="confirm" name="confirm" class="form-control" required>
+                    </div>
+
+                    <div class="col-12 d-flex flex-row justify-content-center mt-3">
+                        <button class="btn btn-outline-primary ">Create Account</button>
+                    </div>
+            </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="/js/passwordValidator.js"></script>

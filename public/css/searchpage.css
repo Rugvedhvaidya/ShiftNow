@@ -1,0 +1,41 @@
+/* CSS file for listing the houses */
+
+.house-card {
+    height: 180px;
+    background-color: white;
+    margin: 10px 0;
+}
+
+.house-image {
+    height: 180px;
+    width: 220px;
+}
+
+.house-details {
+    padding: 10px;
+    width: 550px;
+}
+
+.house-description {
+    font-size: 12px
+}
+
+.get-details-button {
+    margin-left: 5px;
+    height: 5vh;
+    width: 100px;
+    border-radius: 10px;
+}
+
+.house-ratings {
+    padding: 10px;
+    border-left-style: dashed;
+    border-left-width: 2px;
+    width: 200px;
+}
+
+.house-icons {
+    width: 20px;
+    height: 20px;
+    margin: 0 7px;
+}
