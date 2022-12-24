@@ -13,10 +13,12 @@ Group Members
 
         Tulluri Rakesh
 
+        Vaidya Rugvedh
+        
         Tupili Mukundh Reddy
 
         Thota Datta Aneesh
 
         Thorlikonda Sai Gopinadh
 
-        Vaidya Rugvedh
+        
